@@ -1,0 +1,42 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.pdb
+*.db
+*.sqlite3
+
+# Entorno virtual
+.venv/
+venv/
+env/
+
+# Archivos de configuración de IDEs
+.idea/
+.vscode/
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Archivos temporales
+*.bak
+*.swp
+
+# Archivos de compilación
+build/
+dist/
+*.egg-info
+
+# Archivos de tests
+*.cover
+nosetests.xml
+coverage.xml
+*.hypothesis/
+
+# Otros archivos que no quieras versionar
+*.env
