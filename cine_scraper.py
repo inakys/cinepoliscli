@@ -65,59 +65,36 @@ def get_new_releases():
     return data_list
 
 def print_terminal():
+    # Obtener la lista de nuevas películas (diccionarios) desde la función get_new_releases()
     movies_list = get_new_releases()  # Lista de diccionarios de películas.
-    
 
+    # Definir los bordes para la tabla
     border = "┌───────────────────────────────────────────────────────────────────────────────┐"
     separator = "├───────────────────────────────────────────────────────────────────────────────┤"
     bottom_border = "└───────────────────────────────────────────────────────────────────────────────┘"
 
+    # Imprimir la parte superior de la tabla
     print(border)
+    
+    # Iterar sobre cada película en la lista y mostrar sus datos
     for i, movie in enumerate(movies_list):
+        # Imprimir la fila de la tabla con los datos de la película (Título, Título original y Año)
         print(f"| Titulo: {movie['title']} | "
-            f"Titulo original: {movie['original_title']} | "
-            f"Año: {movie['year']} |")
-        print(f"| Género: {movie['genre']} | "
-            f"Director: {movie['director']} | "
-            f"Actor: {movie['actor']} |")
-        print(f"| País: {movie['country']} | "
-            f"Fecha: {movie['day_month']} |")
+              f"Titulo original: {movie['original_title']} | "
+              f"Año: {movie['year']} |")
         
-        # Imprimir el separador si no es el último elemento de la lista
+        # Imprimir la siguiente fila con más detalles (Género, Director y Actor)
+        print(f"| Género: {movie['genre']} | "
+              f"Director: {movie['director']} | "
+              f"Actor: {movie['actor']} |")
+        
+        # Imprimir la siguiente fila con el País y la Fecha de estreno
+        print(f"| País: {movie['country']} | "
+              f"Fecha: {movie['day_month']} |")
+        
+        # Si no es el último elemento de la lista, imprimir el separador entre las películas
         if i < len(movies_list) - 1:
             print(separator)
 
+    # Imprimir la parte inferior de la tabla
     print(bottom_border)
-
-    # Agregar las filas de la película
-    # for movie in movies_list:
-    #     table.add_row([
-    #         movie['movie_id'], movie['title'], movie['genre'], movie['rating'], 
-    #         movie['original_title'], movie['year'], movie['director'], 
-    #         movie['actor'], movie['country'], movie['distributor'], movie['day_month']
-    #     ])
-    
-    # Imprimir la tabla con un estilo más bonito
-    
-    
-    
-def print_weather():
-    weather_data = [
-        {"time": "Morning", "weather": "Sunny", "temp": "-2 °C", "wind": "6-13 km/h", "rain": "0.0 mm | 0%"},
-        {"time": "Noon", "weather": "Sunny", "temp": "+10 °C", "wind": "17-19 km/h", "rain": "0.0 mm | 0%"},
-        {"time": "Evening", "weather": "Clear", "temp": "+8 °C", "wind": "25-33 km/h", "rain": "0.0 mm | 0%"},
-        {"time": "Night", "weather": "Cloudy", "temp": "+6 °C", "wind": "9-18 km/h", "rain": "0.0 mm | 0%"}
-    ]
-
-
-
-
-    # Creating the borders
-    border = "┌──────────────────────────────┬──────────────────────────────┐"
-    print(border)
-    for data in weather_data:
-        print(f"│ {data['time']: <20} │ {data['weather']: <20} │")
-        print(f"│ Temp: {data['temp']: <18} │ Wind: {data['wind']: <18} │")
-        print(f"│ Rain: {data['rain']: <18} │")
-        print(border)
-

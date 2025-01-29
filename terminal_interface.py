@@ -8,5 +8,3 @@ def cinepoliscli(up):  # Cambié 'upcoming' por 'up' para que coincida con el no
     if up:  # Aquí también usamos 'up' para verificar el flag
         # print_terminal()
         print_terminal()
-
-
